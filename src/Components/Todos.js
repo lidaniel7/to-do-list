@@ -1,21 +1,20 @@
-import React, {Component} from 'react';
+// import React, {Component} from 'react';
+// import ToDoItem from './ToDoItem.js';
 
-class Todos extends Component {
-    constructor() {
-        super()
-        this.state = {
-            checked: "checked",
-            text: "asdfasfoiwjefo",
-            delete: "delete"
-        }
-    }
-    render() {
-        return (
-            <div className="App">
-              <h1>{this.state.checked}</h1>
-            </div>
-          );
-    }
-}
+// class Todos extends Component {
+//     constructor() {
+//         super()
+//         this.state = {
+//             items: [<ToDoItem name="Math"/>, <ToDoItem name="Science"/>]
+//         }
+//     }
+//     render() {
+//         return (
+//             <div className="App">
+//                 {this.state.items}
+//             </div>
+//           );
+//     }
+// }
 
-export default Todos;
+// export default Todos;
