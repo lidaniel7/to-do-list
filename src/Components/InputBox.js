@@ -7,7 +7,7 @@ class InputBox extends Component {
 
         return (
             <form onSubmit={handleSubmit}>
-            <input placeHolder="Enter a task" onChange={handleChange}/>
+            <input placeholder="Enter a task" onChange={handleChange}/>
             <button>Add</button>
             </form>
           );

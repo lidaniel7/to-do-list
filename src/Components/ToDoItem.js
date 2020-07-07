@@ -16,12 +16,10 @@ class ToDoItem extends Component {
         })
     }
 
-    handleClick(event) {
-
-    }
-
 
     render() {
+        const {deleteButton} = this.props;
+
         const checkedStyle = {
             textDecoration: "line-through",
             fontStyle: "italic",
@@ -32,7 +30,7 @@ class ToDoItem extends Component {
             <div className="todoitem">
                 <input type="checkbox" checked={this.state.checked} onChange={this.handleChange}/>
                 <p style={this.state.checked ? checkedStyle : null}>{this.props.name}</p>
-                <button onChange={this.props.handleClick}>Delete</button>
+                <button onClick={deleteButton} id={this.props.id} name={this.props.name}>Delete</button>
             </div>
           );
     }
