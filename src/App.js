@@ -3,46 +3,48 @@ import Todos from './Components/Todos.js';
 import './App.css';
 import Header from './Components/Header.js';
 import ToDoItem from './Components/ToDoItem.js';
+import InputBox from './Components/InputBox.js';
 
 class App extends Component{
   constructor() {
     super()
-    // this.state = {
-    //   inputs: [
-
-    //   ],
-    //   items: []
-    // }
+    this.state = {
+      taskList: [],
+      currentItem: ''
+    }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log("Hello")
-    // this.setState({
-    //   items: <ToDoItem />
-    // })
+    const newItem = {
+      id: new Date(),
+      name: this.state.currentItem,
+      completed: false,
+    }
+    const updatedList = this.state.taskList.concat(newItem);
+    this.setState({
+      taskList: updatedList,
+      currentItem: '',
+    })
+    event.target.reset();
   }
 
   handleChange(event) {
     event.preventDefault();
-    console.log("hello")
-    // this.setState({
-    //   input: event.target.value
-    // })
+    this.setState({
+      currentItem: event.target.value
+    })
   }
 
   render() {
-    const itemList = this.props.items.map(task => <ToDoItem name={task.name}/>)
+    const itemList = this.state.taskList.map(task => <ToDoItem name={task.name} key={task.id} completed={task.completed}/>)
 
     return (
       <div className="App">
         <Header />
-        <form onSubmit={this.handleSubmit}>
-            <input placeHolder="Enter a task" onChange={this.handleChange}/>
-            <button>Add</button>
-        </form>
+        <InputBox handleSubmit={this.handleSubmit} handleChange={this.handleChange}/>
         {itemList}
       </div>
     );

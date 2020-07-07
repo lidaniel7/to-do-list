@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-const DATA = [
-  { id: "todo-0", name: "Math", completed: false },
-  { id: "todo-1", name: "Science", completed: false},
-]
+// const DATA = [
+//   { id: "todo-0", name: "Math", completed: false },
+//   { id: "todo-1", name: "Science", completed: false},
+// ]
 
 ReactDOM.render(
   <React.StrictMode>
-    <App items={DATA}/>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
